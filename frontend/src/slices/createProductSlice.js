@@ -33,6 +33,10 @@ const createProductSlice = createSlice({
             state.loading= false;
             state.success = action.payload.success;
         } )
+        .addCase(createProduct.pending,(state)=>{
+          state.success= false;
+          state.loading=true;
+        })
         .addCase(createProduct.rejected,(state,action)=>{
             state.loading= false,
             state.success = action.payload.success;

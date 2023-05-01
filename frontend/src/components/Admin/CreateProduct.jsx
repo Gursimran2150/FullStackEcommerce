@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
-import { useNavigate } from 'react-router-dom';
+
 import MetaData from '../layout/MetaData'
 import './createproduct.css'
 import {  Button } from '@mui/material'
@@ -10,12 +10,13 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import StorageIcon from '@mui/icons-material/Storage';
 import { createProduct } from '../../slices/createProductSlice';
+import Loader from '../layout/Loader/Loader'
 
 const CreateProduct = () => {
     
         const dispatch = useDispatch();
        
-        const navigate = useNavigate();
+      
 
        
         const { loading, success } = useSelector((state) => state.newProduct);
@@ -42,11 +43,11 @@ const CreateProduct = () => {
       useEffect(()=>{
         if (success) {
             alert("Product Created Successfully");
-            navigate("/products");
+            // navigate("/products");
             // dispatch();
           }
         }
-        , [dispatch, navigate, success])
+        , [dispatch,  success])
          
       
         const createProductSubmitHandler = (e) => {
@@ -87,6 +88,10 @@ const CreateProduct = () => {
           });
         };
       
+        if(loading){
+          return <Loader/>
+        }
+
         return (
           <>
             <MetaData title="Create Product" />

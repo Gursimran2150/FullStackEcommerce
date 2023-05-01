@@ -2,7 +2,7 @@
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 import {  useDispatch, useSelector } from 'react-redux'
-import { Link} from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import CartItemCard from './CartItemCard'
 
 import './cart.css'
@@ -16,11 +16,17 @@ const Cart = () => {
 
    const dispatch = useDispatch();
     const {cartItems} = useSelector((state)=>state.cart)
-
+    const {isAuthenticated} = useSelector((state)=>state.user)
     
+    const navigate = useNavigate();
+
     const handleCheckOut = ()=>{
-        alert("Thanks for shopping with us(:");
-        dispatch(clearCart())    
+        if(isAuthenticated){
+          alert("Thanks for shopping with us(:");
+        dispatch(clearCart())  
+        }  else{
+            navigate('/login');
+        }
     }
    
 
