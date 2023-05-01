@@ -112,15 +112,16 @@ nav {
 }
 
 .search-container button {
-  background-color: var(--mainColorLight);
+  background-color: tomato;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px;
   font-size: 16px;
+  transition: 0.3s all linear;
   cursor: pointer;
 }
 
 .search-container button:hover {
-  background-color: #49568c;
+  background-color: rgb(180, 69, 49);
 }
