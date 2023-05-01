@@ -14,14 +14,14 @@ export const createProduct = createAsyncThunk('admin/product',async({myForm})=>{
         },
       };
 
-    const {data} = await axios.post(`http://localhost:4000/api/v1/products/admin/new`, 
+    const {data} = await axios.post(`https://ecommerce-a9ux.onrender.com/api/v1/products/admin/new`, 
    myForm,  config)
     return data;
 
 })
 
 export const deletProduct = createAsyncThunk('admin/delete', async({id})=>{
-    const {data} = await axios.delete(`http://localhost:4000/api/v1/products/admin/${id}`)
+    const {data} = await axios.delete(`https://ecommerce-a9ux.onrender.com/api/v1/products/admin/${id}`)
     return data;
   })
 

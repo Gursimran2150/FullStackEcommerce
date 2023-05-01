@@ -15,7 +15,7 @@ export const fetchProducts = createAsyncThunk(
     try {
       // console.log("i am running");
 
-      const url = category===""?`http://localhost:4000/api/v1/products?keyword=${keyword}&page=${page}&price[gte]=${price[0]}&price[lte]=${price[1]}`
+      const url = category===""?`https://ecommerce-a9ux.onrender.com/api/v1/products?keyword=${keyword}&page=${page}&price[gte]=${price[0]}&price[lte]=${price[1]}`
       :`http://localhost:4000/api/v1/products?keyword=${keyword}&page=${page}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${category}`
 
       console.log()

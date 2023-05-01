@@ -22,7 +22,7 @@ export const loginUser = createAsyncThunk(
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/login",
+        "https://ecommerce-a9ux.onrender.com/api/v1/login",
         { email:loginEmail, password:loginPassword },
         config
       );
@@ -46,7 +46,7 @@ export const registerUser = createAsyncThunk('user/register',async(fromData)=>{
     };
     try {
         const { data } = await axios.post(
-          "http://localhost:4000/api/v1/register",
+          "https://ecommerce-a9ux.onrender.com/api/v1/register",
           fromData,
           config
         );
@@ -67,7 +67,7 @@ export const registerUser = createAsyncThunk('user/register',async(fromData)=>{
 export const getMyUserDetails = createAsyncThunk('user/me', async()=>{
   let res = null
   try{
-    const {data} = await axios.get('http://localhost:4000/api/v1/me');
+    const {data} = await axios.get('https://ecommerce-a9ux.onrender.com/api/v1/me');
   console.log(data)
   return data;
   }catch(e){
@@ -79,7 +79,7 @@ export const getMyUserDetails = createAsyncThunk('user/me', async()=>{
 
 //logout user
 export const logoutUser = createAsyncThunk('user/logout', async()=>{
-  const {data} = await axios.get('http://localhost:4000/api/v1/logout');
+  const {data} = await axios.get('https://ecommerce-a9ux.onrender.com/api/v1/logout');
   return data;
 }) 
 
