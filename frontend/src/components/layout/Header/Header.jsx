@@ -46,8 +46,8 @@ function Header() {
       <nav ref={navRef}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/products">Product</NavLink>
-        <NavLink to="/#">Contact</NavLink>
-        <NavLink to="/#">About</NavLink>
+        
+        <NavLink to="/about">About</NavLink>
         <NavLink to="/cart">Cart</NavLink>
         <NavLink to="/login">Profile</NavLink>
         {isAuthenticated?<><NavLink to={'/'} onClick={logout}>Logout</NavLink>

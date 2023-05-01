@@ -11,6 +11,7 @@ import UpdateProfile from "./components/User/UpdateProfile";
 import Cart from "./components/cart/cart";
 import CreateProduct from "./components/Admin/CreateProduct";
 import DeleteProduct from "./components/Admin/DeleteProduct";
+import About from "./components/layout/About/About";
 
 // import { useEffect } from "react";
 // import { useDispatch } from "react-redux";
@@ -43,6 +44,7 @@ function App() {
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/add/product" element={<CreateProduct/>}/>
           <Route path="/delete/product" element={<DeleteProduct/>}/>
+          <Route path="/about" element={<About/>}/>
         </Routes>
 
         <Footer />
